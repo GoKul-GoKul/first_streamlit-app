@@ -57,5 +57,5 @@ streamlit.header("What Fruit would you like to have?")
 # add_my_fruit = streamlit.text_input('What Fruit would you like to have?', 'Jackfruit')
 # streamlit.write('Thanks for adding ', add_my_fruit)
 
-title = streamlit.text_input('Movie title', 'Life of Brian')
+title = streamlit.text_input('Movie title', value = 'Life of Brian')
 streamlit.write('The current movie title is', title)
