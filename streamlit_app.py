@@ -23,25 +23,18 @@ fruits_to_show = myfruits_list.loc[fruits_selected]
 #streamlit dataframe
 streamlit.dataframe(fruits_to_show)
 
-# fruit_choice = streamlit.text_input('What fruit would you like information about?')
-# streamlit.write('The user entered ', fruit_choice)
+fruit_choice = streamlit.text_input('What fruit would you like information about?', 'Kiwi')
+streamlit.write('The user entered ', fruit_choice)
 
 #requests
 import requests
-# fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
-# fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-# write your own comment - what does this do?
-# streamlit.dataframe(fruityvice_normalized)
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+write your own comment - what does this do?
+streamlit.dataframe(fruityvice_normalized)
 
 import snowflake.connector
-
-# my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-# my_cur = my_cnx.cursor()
-# my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-# my_data_row = my_cur.fetchone()
-# streamlit.text("Hello from Snowflake:")
-# streamlit.text(my_data_row)
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
@@ -50,12 +43,7 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
 
-
 #add a text box challenge lab
-
 streamlit.header("What Fruit would you like to have?")
-# add_my_fruit = streamlit.text_input('What Fruit would you like to have?', 'Jackfruit')
-# streamlit.write('Thanks for adding ', add_my_fruit)
-
-title = streamlit.text_input('Movie title', value = 'Life of Brian')
-streamlit.write('The current movie title is', title)
+add_my_fruit = streamlit.text_input('What Fruit would you like to have?', 'Jackfruit')
+streamlit.write('Thanks for adding ', add_my_fruit)
