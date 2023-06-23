@@ -54,5 +54,5 @@ streamlit.dataframe(my_data_rows)
 #add a text box challenge lab
 
 # streamlit.header("What Fruit would you like to have?")
-add_my_fruit = streamlit.text_input = ("What Fruit would you like to have?", "Jackfruit")
+add_my_fruit = streamlit.text_input("What Fruit would you like to have?", "Jackfruit")
 streamlit.text("Thanks for adding", add_my_fruit)
